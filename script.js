@@ -219,7 +219,7 @@ function endQuiz() {
 
   postButton.onclick = () => {
     const score = correctAnswers;
-    const text = `${modeText}で10問中${score}問正解！ #${NUM_NOTES}音階クイズ`;
+    const text = `${modeText}で10問中${score}問正解！ #${NUM_NOTES}音階当てクイズ\nhttps://startcpp.github.io/microtonal-quiz/`;
     const url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
     window.open(url, '_blank');
   };
