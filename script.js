@@ -1,4 +1,5 @@
-const NUM_NOTES = 24;
+const NUM_SCALES = 24; //音階数
+const NUM_NOTES = 25;  //鍵盤数
 let currentQuestion = 0;
 let correctAnswers = 0;
 let mode = "single";
@@ -19,7 +20,7 @@ function startQuiz(selectedMode) {
 }
 
 function generateKeyboard() {
-  const noteNames = ["ド", "ド♯", "レ", "レ♯", "ミ", "ファ", "ファ♯", "ソ", "ソ♯", "ラ", "ラ♯", "シ"];
+  const noteNames = ["ド(C4)", "ド♯", "レ", "レ♯", "ミ", "ファ", "ファ♯", "ソ", "ソ♯", "ラ", "ラ♯", "シ", "ド(C5)"];
   const keyboard = document.getElementById("keyboard");
   keyboard.innerHTML = '';
 
@@ -67,7 +68,7 @@ function playQuestion() {
     const gain = context.createGain();
     osc.type = 'sine';
 
-    const freq = 440 * Math.pow(2, (noteIndex - (NUM_NOTES / 12) * 9) / NUM_NOTES);
+    const freq = 440 * Math.pow(2, (noteIndex - (NUM_SCALES / 12) * 9) / NUM_SCALES);
     osc.frequency.value = freq;
     gain.gain.value = 0.3;
 
@@ -219,7 +220,7 @@ function endQuiz() {
 
   postButton.onclick = () => {
     const score = correctAnswers;
-    const text = `${modeText}で10問中${score}問正解！ #${NUM_NOTES}音階当てクイズ\nhttps://startcpp.github.io/microtonal-quiz/`;
+    const text = `${modeText}で10問中${score}問正解！ #${NUM_SCALES}音階当てクイズ\nhttps://startcpp.github.io/microtonal-quiz/`;
     const url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
     window.open(url, '_blank');
   };
