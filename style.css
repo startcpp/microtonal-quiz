@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+#keyboard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.key {
+  width: 35px;
+  height: 140px;
+  margin: 2px;
+  background: #eee;
+  border: 1px solid #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key:hover {
+  background: #ccc;
+}
+
+.correct-key {
+  background: yellow !important;
+  border: 2px solid red;
+}
+
+#history {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.selected-key {
+  background-color: #ffd966;  /* 黄色系のハイライト */
+  border: 2px solid #f1c232;
+  box-shadow: 0 0 8px #f1c232;
+}

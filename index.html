@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>24音階クイズ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>24音階クイズ 🎶</h1>
+  <div id="mode-select">
+    <button onclick="startQuiz('single')">単音</button>
+    <button onclick="startQuiz('double')">2音</button>
+    <button onclick="startQuiz('triple')">3音</button>
+  </div>
+
+  <div id="quiz" style="display:none;">
+    <p id="question-number"></p>
+    <button onclick="playQuestion()">🔊 問題を再生</button>
+    <div id="keyboard"></div>
+	<div id="history"></div> <!-- 正誤履歴 -->
+  </div>
+
+  <div id="result" style="display:none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
